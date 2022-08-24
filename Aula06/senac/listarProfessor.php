@@ -1,7 +1,7 @@
 <?php
 
 include "conexao.php";
-$sql = "select * from alunos order by nome";
+$sql = "select * from professores order by nome";
 $seleciona = mysqli_query($conexao, $sql);
 
 
@@ -23,7 +23,7 @@ $seleciona = mysqli_query($conexao, $sql);
         <div class="text-end">
             <a href="formularioProfessor.php"><button type="button" class="btn btn-success btn-sm" >CADASTRAR NOVO PROFESSOR</button></a>
         </div>
-        <h1>Lista de Alunos </h1>
+        <h1>Lista de Professores </h1>
         <div class="container text-center">
             <div class="row bg-dark text-light">
                 <div class="col-1">
@@ -69,10 +69,11 @@ $seleciona = mysqli_query($conexao, $sql);
                                
                  
                     <div class="col-3">
-                    <button type="button" class="btn btn-success btn-sm">Visualizar</button>
+                    <a href="visualizarProfessor.php?idProfessor=<?php echo $idProfessor; ?>">
+                    <button type="button" class="btn btn-success btn-sm">Visualizar</button></a>
                     <button type="button" class="btn btn-primary btn-sm">Editar</button>
-                    <a href="excluirAluno.php?idAluno=<?php echo $idProfessor;
-                    ?>" onclick="return confirm('Confirma a exclusão do Aluno?')">
+                    <a href="excluirProfessor.php?idProfessor=<?php echo $idProfessor;
+                    ?>" onclick="return confirm('Confirma a exclusão do Professor?')">
                     <button class="btn btn-danger btn-sm">Excluir</button>
                     </a>
                     </div>

@@ -77,7 +77,8 @@ $seleciona = mysqli_query($conexao, $sql);
                     </div>                  
                  
                     <div class="col-3">
-                    <button type="button" class="btn btn-success btn-sm">Visualizar</button>
+                    <a href="VisualizarAluno.php?idAluno=<?php echo $idAluno;?>">
+                    <button type="button" class="btn btn-success btn-sm">Visualizar</button></a>
                     <button type="button" class="btn btn-primary btn-sm">Editar</button>
                     <a href="excluirAluno.php?idAluno=<?php echo $idAluno;
                     ?>" onclick="return confirm('Confirma a exclusão do Aluno?')">
