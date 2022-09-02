@@ -13,3 +13,11 @@
 #grad{
     background-image: linear-gradient(rgb(129, 9, 129),rgb(86, 86, 175));
 }
+
+.foto{
+    width: 2rem;
+   
+}
+img{
+    width: 100%;
+}
