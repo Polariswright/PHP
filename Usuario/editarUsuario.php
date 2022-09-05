@@ -41,9 +41,9 @@ include "../controle.php";
 
         ?>
 
-            <form method="post" action="updateProfessor.php" name="form">
+            <form method="post" action="updateUsuario.php" name="form">
                 <div class="mb-3">
-                    <label for="idProfessor" class="form-label">ID</label>
+                    <label for="login" class="form-label">ID</label>
                     <input type="hidden" class="form-control" id="id" value="<?php echo $login; ?>" name="login" required>
                 </div>
                 <div class="mb-3">

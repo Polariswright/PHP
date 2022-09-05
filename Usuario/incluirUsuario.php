@@ -10,7 +10,7 @@ if(isset($_POST['login'])){
     $nivel = 'usu';
     $foto = '../fotos/semfoto.jpg';
 
-    $sql = "insert into usuario(login,senha,nome,email,nivel,foto) values('$login','$senha','$nome','$email',$nivel,$foto)";
+    $sql = "insert into usuario(login,senha,nome,email,nivel,foto) values('$login','$senha','$nome','$email','$nivel','$foto')";
     $incluir = mysqli_query($conexao,$sql);
 
     if($incluir){

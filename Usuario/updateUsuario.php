@@ -2,13 +2,11 @@
 
 include "../conexao.php";
 if(isset($_POST['login'])){
-    $idAluno = $_POST['login'];
+    $login = $_POST['login'];
     $nome = trim($_POST['nome']);
     $email = trim($_POST['email']);
-    $endereco = trim($_POST['endereco']);
-    $telefone = trim($_POST['telefone']);
    
-    $sql = "update usuario set nome = '$nome', email= '$email', endereco = '$endereco', telefone = '$telefone' where login = $login";
+    $sql = "update usuario set nome = '$nome', email= '$email' where login = '$login'";
     $alterar = mysqli_query($conexao,$sql);
 
     if($alterar){
@@ -31,7 +29,7 @@ if(isset($_POST['login'])){
 }
 else{
     echo "<p>Esta é uma página de tratamento de dados.</p>
-    <p>clique <a href = 'listarProfessor.php'>Aqui</a> para selecionar um aluno.</p>";
+    <p>clique <a href = 'listarUsuario.php'>Aqui</a> para selecionar um aluno.</p>";
 }
 
 ?>

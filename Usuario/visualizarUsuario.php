@@ -14,6 +14,8 @@ if (isset($_GET['login'])) {
   $login = $exibe['login'];
   $senha = $exibe['senha'];
   $email = $exibe['email'];
+  $nivel = $exibe['nivel'];
+  $foto = $exibe['foto'];
 } else {
   $erro++;
 }
@@ -33,37 +35,54 @@ if (isset($_GET['login'])) {
     <h2>Usuário</h2>
     <hr>
     <div class="container text-start bg-gradient p-3 ">
-      <?php
-      if (!$erro) {
-        echo "
-            
-            <p>Nome: $nome </p>
-            <p>Login: $login </p>
-            <p>Email: $email </p>
-            <p>senha: $senha </p>";
-      } else {
-        echo "
-        <p>Nenhum Usuário foi selecionado.</p>
-        <p>Clique em Listar Usuários para selecionar um Usuário.</p>
-        
-        ";
-      }
-      ?>
-    </div>
-    <div class="row">
-      <div class="col text-start">
+      <div class="row">
+        <div class="col-2 text-center">
+          <img src="<?php echo $foto ?>" alt="">
+          <p><a href="editarFoto.php?login=<?php echo $login; ?>">Editar Foto</a></p>
+        </div>
 
-        <a href="listarUsuario.php"><button type="button" class="btn btn-warning btn-sm">Voltar</button></a>
+        <div class="col-10">
+
+
+          <?php
+          if (!$erro) {
+            echo "
+                      
+                      <p>Nome: $nome </p>
+                      <p>Login: $login </p>
+                      <p>Email: $email </p>
+                      <p>senha: $senha </p>
+                      <p>Nivel: $nivel </p>";
+          } else {
+            echo "
+                  <p>Nenhum Usuário foi selecionado.</p>
+                  <p>Clique em Listar Usuários para selecionar um Usuário.</p>
+                  
+                  ";
+          }
+          ?>
+        </div>
 
       </div>
+      <div class="row">
+        <div class="col text-start">
 
-      <div class="col text-end">
-        <a href="editarUsuario.php?login=<?php echo $login ?>"><button type="button" class="btn btn-primary btn-sm">EDITAR DADOS</button></a>
+          <a href="listarUsuario.php"><button type="button" class="btn btn-warning btn-sm">VOLTAR</button></a>
+
+        </div>
+        <div class="col text-center">
+
+          <a href="editarSenha.php?login=<?php echo $login?>"><button type="button" class="btn btn-danger btn-sm">ALTERAR SENHA</button></a>
+
+        </div>
+
+        <div class="col text-end">
+          <a href="editarUsuario.php?login=<?php echo $login ?>"><button type="button" class="btn btn-primary btn-sm">EDITAR DADOS</button></a>
+        </div>
       </div>
     </div>
-  </div>
-  <?php
-  include "../footer.php";
-  ?>
+    <?php
+    include "../footer.php";
+    ?>
 
-</html>
+    </html>

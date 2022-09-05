@@ -31,13 +31,13 @@ include "controle.php";
         <div class="col">
             <a href="Professor/listarProfessor.php">
             <img src="img/professor.png" >
-            <p>Usuário</p>
+            <p>Professor</p>
             </a>
         </div>
         <div class="col">
             <a href="aluno/listarAluno.php">
             <img src="img/aluno.png" >
-            <p>Usuário</p>
+            <p>Aluno</p>
             </a>
         </div>
     </div>
